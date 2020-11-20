@@ -187,7 +187,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Your Title</a>
+      <a class="navbar-brand" href="/">吴义的个人博客</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -210,28 +210,28 @@
 
           
           <li>
-            <a href="/about/">About</a>
+            <a href="/about/">关于</a>
           </li>
           
           
 
           
           <li>
-            <a href="/archive/">Archives</a>
+            <a href="/archive/">归档</a>
           </li>
           
           
 
           
           <li>
-            <a href="/categories/">Categories</a>
+            <a href="/categories/">分类</a>
           </li>
           
           
 
           
           <li>
-            <a href="/tags/">Tags</a>
+            <a href="/tags/">标签</a>
           </li>
           
           
@@ -287,10 +287,11 @@
 	<!-- Modified by Yu-Hsuan Yen -->
 <!-- Post Header -->
 
+  <!-- CDN: jsdelivr start -->
   <style type="text/css">
     header.intro-header {
        /*page*/
-        background-image: url('/img/header_img/archive_bg2.jpg');
+        background-image: url('https://cdn.jsdelivr.net/gh/V-Vincen/V-Vincen.github.io/img/header_img/archive_bg2.jpg');
       
     }
 
@@ -300,6 +301,7 @@
       }
     
   </style>
+  <!-- CDN: jsdelivr end -->
 
 
 
@@ -313,9 +315,9 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
           <div class="site-heading">
-            <h1>Your Title</h1>
+            <h1>吴义的个人博客</h1>
             <!--<hr class="small">-->
-            <span class="subheading">This is hexo theme</span>
+            <span class="subheading">网络研究技术总结</span>
           </div>
           
         </div>
@@ -396,9 +398,24 @@
           <li>
             04-17
             <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/04/17/第二个文件/" style="color: #0085a1">
+              <span>
+                我的第二个文件
+              </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+          </li>
+          
+          <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+          <li>
+            04-17
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
             <a href="/2020/04/17/Hexo-Theme-LiveMyLife/" style="color: #0085a1">
               <span>
-                Hexo-Theme-LiveMyLife
+                这是个啥
               </span>
             </a>
             <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
@@ -451,11 +468,11 @@
   <div class="tags">
     
     
-    <a href="/tags/#Hexo" title="Hexo" rel="1">Hexo</a>
+    <a href="/tags/#Hexo" title="Hexo" rel="2">Hexo</a>
     
     
     
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="1">Hexo-Theme-LiveMyLife</a>
+    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="2">Hexo-Theme-LiveMyLife</a>
     
     
   </div>
@@ -546,7 +563,11 @@
   <ul>
     
     <a href="../../2020/04/17/Hexo-Theme-LiveMyLife/">
-      <li>Hexo-Theme-LiveMyLife</li>
+      <li>这是个啥</li>
+    </a>
+    
+    <a href="../../2020/04/17/%E7%AC%AC%E4%BA%8C%E4%B8%AA%E6%96%87%E4%BB%B6/">
+      <li>我的第二个文件</li>
     </a>
     
   </ul>
@@ -578,7 +599,7 @@
     <!-- <h5>ARCHIVES</h5> -->
     <h5><a href="/archives/">ARCHIVES</a></h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/04/">四月 2020</a><span class="archive-list-count">2</span></li></ul>
     </div>
 
 
@@ -670,7 +691,7 @@
         </ul>
         <p class="copyright text-muted">
           Copyright &copy;
-          Your Name
+          吴义
           2020
           <br>
           Theme by
@@ -722,6 +743,29 @@
   <!-- ThemeColor end -->
 
 
+
+  <!-- CDN: jsdelivr start -->
+  <script type="text/javascript">
+    let imgsUrl = document.getElementsByTagName("img");
+    let imgUrl = Array.from(imgsUrl);
+
+    let jsdelivr = "https://cdn.jsdelivr.net/gh/";
+    let gh = "V-Vincen";
+    let ghPages = gh + ".github.io";
+    let pagePath = "tags/Hexo/index.html";
+    let jsdelivrurl;
+    if (pagePath.indexOf("index.html") != -1) {
+      jsdelivrurl = jsdelivr + gh + "/" + ghPages;
+    }else{
+      jsdelivrurl = jsdelivr + gh + "/" + ghPages + "/" + pagePath;
+    }
+    imgUrl.forEach(item => {
+      let oldUrl = item.getAttribute("src");
+      let newUrl = oldUrl.replace(oldUrl, jsdelivrurl + oldUrl).replace("..","");
+      item.setAttribute("src", newUrl);
+    });
+  </script>
+  <!-- CDN: jsdelivr end -->
 
 
 
